@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat Room</title>
+
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+
+<body>
+    <main class="relative h-screen w-full">
+        <div class="absolute top-0 left-0 h-screen w-full">
+            <img src="./img/bg.jpg" alt="background image" class="h-screen w-full object-cover object-center">
+        </div>
+
+
+        <!-- username input start here -->
+        <div class="relative w-full h-screen grid place-items-center" id="namesection">
+            <div
+                class="flex gap-4 w-96  h-16 mt-4 bg-white rounded-xl bg-opacity-20 backdrop-filter backdrop-blur-md py-2 px-4">
+                <input type="text" id="username"
+                    class="w-full bg-transparent fill-none outline-none text-white font-medium focus:bg-transparent focus:border-2 focus:border-indigo-500 rounded-md px-2 placeholder:text-white"
+                    placeholder="Enter your username...">
+                <button class="text-white py-1 px-4 bg-indigo-500 text-lg font-semibold rounded-md" id="startchat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- username input end here -->
+
+        <div class="relative w-full h-screen p-4 hidden" id="mainchat">
+            <div class=" w-full h-full flex flex-col">
+
+                <!-- chat header start here -->
+                <div class="flex gap-2">
+                    <div
+                        class="grow w-full mt-4 bg-white rounded-xl bg-opacity-20 backdrop-filter backdrop-blur-md py-2 px-4 grid place-items-center">
+                        <p class="text-center font-semibold text-3xl text-white" id="name">
+                            Chat App
+                        </p>
+                    </div>
+                    <div
+                        class="mt-4 bg-white rounded-xl bg-opacity-20 backdrop-filter backdrop-blur-md py-2 w-48 px-4  grid place-items-center">
+                        <p class="text-center font-semibold text-xl text-white flex gap-2" id="usercount">
+                            ONLINE
+                        </p>
+                    </div>
+                </div>
+                <!-- chat header end here -->
+
+                <!-- chat area start here -->
+                <div id="chatarea"
+                    class="w-full flex flex-col gap-2   grow mt-4 bg-white rounded-xl bg-opacity-20 backdrop-filter backdrop-blur-md p-4">
+                </div>
+                <!-- chat area end here -->
+
+                <!-- all user will be here -->
+                <div class="flex gap-2 mt-4 overflow-x-scroll" id="users">
+                    
+                </div>
+                <!-- chat input start here -->
+                <div
+                    class="flex gap-4 w-full  h-16 mt-4 bg-white rounded-xl bg-opacity-20 backdrop-filter backdrop-blur-md py-2 px-4">
+                    <input type="text" id="chattext"
+                        class="w-full bg-transparent fill-none outline-none text-white font-medium focus:bg-transparent focus:border-2 focus:border-indigo-500 rounded-md px-4 placeholder:text-white"
+                        placeholder="Type something to start chating..">
+                    <button class="text-white py-1 px-4 bg-indigo-500 text-lg font-semibold rounded-md" id="send">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- chat input end here -->
+            </div>
+        </div>
+
+
+        <!-- alert start here -->
+        <div class="fixed bottom-2 right-4 bg-rose-500 rounded-xl text-white text-xl w-80 py-2 px-4 hidden" id="error">
+        </div>
+        <div class="fixed bottom-2 right-4 bg-green-500 rounded-xl text-white text-xl w-80 py-2 px-4 hidden"
+            id="success"></div>
+        <!-- alert end here -->
+
+
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
